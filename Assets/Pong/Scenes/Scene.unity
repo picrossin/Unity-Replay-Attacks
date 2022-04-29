@@ -923,7 +923,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   syncMode: 0
   syncInterval: 0.1
-  LeftScore: 0
+  RightScore: 0
 --- !u!114 &1352350034
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1356,7 +1356,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   syncMode: 0
   syncInterval: 0.1
-  RightScore: 0
+  LeftScore: 0
 --- !u!1 &1607538194
 GameObject:
   m_ObjectHideFlags: 0
@@ -1458,8 +1458,8 @@ MonoBehaviour:
   offlineScene: 
   onlineScene: 
   transport: {fileID: 1886246553}
-  networkAddress: localhost
-  maxConnections: 4
+  networkAddress: 192.168.2.16
+  maxConnections: 2
   authenticator: {fileID: 0}
   playerPrefab: {fileID: 1240244544407914, guid: b1651eaf8c7564a1c86031dfbb8a7b28, type: 3}
   autoCreatePlayer: 1
