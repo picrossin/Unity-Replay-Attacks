@@ -16,6 +16,7 @@ namespace Mirror.Examples.Pong
         public Transform leftRacketSpawn;
         public Transform rightRacketSpawn;
 
+        [SerializeField] public bool useUDPScores;
         [SerializeField] private Scores scores;
         
         GameObject ball;

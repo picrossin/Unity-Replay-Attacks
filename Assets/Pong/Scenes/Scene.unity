@@ -410,6 +410,7 @@ GameObject:
   m_Component:
   - component: {fileID: 450273278}
   - component: {fileID: 450273277}
+  - component: {fileID: 450273279}
   m_Layer: 0
   m_Name: Scores
   m_TagString: Untagged
@@ -429,6 +430,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f7ae6f6b1c68c0f43bbe37253e7fa07d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  networkManager: {fileID: 1886246552}
+  getPost: {fileID: 450273279}
   leftScoreText: {fileID: 1485617391}
   rightScoreText: {fileID: 7628152}
 --- !u!4 &450273278
@@ -445,6 +448,21 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &450273279
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 450273276}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6ae04ef0df25cbf419d2ccb0d8ec67d6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  networkManager: {fileID: 1886246552}
+  leftScoreText: {fileID: 1485617391}
+  rightScoreText: {fileID: 7628152}
 --- !u!1 &473997959
 GameObject:
   m_ObjectHideFlags: 0
@@ -855,7 +873,6 @@ GameObject:
   - component: {fileID: 1352350030}
   - component: {fileID: 1352350032}
   - component: {fileID: 1352350033}
-  - component: {fileID: 1352350034}
   m_Layer: 0
   m_Name: WallLeft
   m_TagString: Untagged
@@ -966,27 +983,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4de5bdeb63023cc43bc40c7d09bfffe2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  syncMode: 0
-  syncInterval: 0.1
   networkManager: {fileID: 1886246552}
-  RightScore: 0
---- !u!114 &1352350034
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1352350029}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9b91ecbcc199f4492b9a91e820070131, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  sceneId: 2843529
-  serverOnly: 0
-  visible: 0
-  m_AssetId: 
-  hasSpawned: 0
+  getPost: {fileID: 450273279}
 --- !u!1 &1368547944
 GameObject:
   m_ObjectHideFlags: 0
@@ -1272,7 +1270,6 @@ GameObject:
   - component: {fileID: 1575697330}
   - component: {fileID: 1575697332}
   - component: {fileID: 1575697334}
-  - component: {fileID: 1575697333}
   m_Layer: 0
   m_Name: WallRight
   m_TagString: Untagged
@@ -1371,23 +1368,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 32}
   m_EdgeRadius: 0
---- !u!114 &1575697333
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1575697329}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9b91ecbcc199f4492b9a91e820070131, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  sceneId: 1012859652
-  serverOnly: 0
-  visible: 0
-  m_AssetId: 
-  hasSpawned: 0
 --- !u!114 &1575697334
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1400,10 +1380,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 57c76573eba8a654380078636bcd2065, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  syncMode: 0
-  syncInterval: 0.1
   networkManager: {fileID: 1886246552}
-  LeftScore: 0
+  getPost: {fileID: 450273279}
 --- !u!1 &1607538194
 GameObject:
   m_ObjectHideFlags: 0
@@ -1505,7 +1483,7 @@ MonoBehaviour:
   offlineScene: 
   onlineScene: 
   transport: {fileID: 1886246553}
-  networkAddress: 192.168.2.16
+  networkAddress: localhost
   maxConnections: 2
   authenticator: {fileID: 0}
   playerPrefab: {fileID: 1240244544407914, guid: b1651eaf8c7564a1c86031dfbb8a7b28, type: 3}
@@ -1515,6 +1493,7 @@ MonoBehaviour:
   - {fileID: 1080679924113744, guid: 5f7a7f34494ed40268eff49dbf9168bf, type: 3}
   leftRacketSpawn: {fileID: 473997961}
   rightRacketSpawn: {fileID: 1397990096}
+  useUDPScores: 0
   scores: {fileID: 450273277}
 --- !u!114 &1886246553
 MonoBehaviour:
