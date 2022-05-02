@@ -9,10 +9,11 @@ public class LeftGoal : NetworkBehaviour
     
     [SyncVar] public int RightScore = 0;
 
-    private void OnCollisionEnter2D()
+    private void OnCollisionEnter2D(Collision2D collision2D)
     {
         // CmdServerAddPointLeft();
         networkManager.SendScoreMessage(false);
+        Destroy(collision2D.gameObject);
     }
 
     [Command(requiresAuthority = false)]
