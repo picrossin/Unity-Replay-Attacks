@@ -400,6 +400,51 @@ Transform:
   m_Father: {fileID: 1607538195}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &450273276
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 450273278}
+  - component: {fileID: 450273277}
+  m_Layer: 0
+  m_Name: Scores
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &450273277
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 450273276}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f7ae6f6b1c68c0f43bbe37253e7fa07d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  leftScoreText: {fileID: 1485617391}
+  rightScoreText: {fileID: 7628152}
+--- !u!4 &450273278
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 450273276}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &473997959
 GameObject:
   m_ObjectHideFlags: 0
@@ -923,6 +968,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   syncMode: 0
   syncInterval: 0.1
+  networkManager: {fileID: 1886246552}
   RightScore: 0
 --- !u!114 &1352350034
 MonoBehaviour:
@@ -1356,6 +1402,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   syncMode: 0
   syncInterval: 0.1
+  networkManager: {fileID: 1886246552}
   LeftScore: 0
 --- !u!1 &1607538194
 GameObject:
@@ -1458,7 +1505,7 @@ MonoBehaviour:
   offlineScene: 
   onlineScene: 
   transport: {fileID: 1886246553}
-  networkAddress: 192.168.2.16
+  networkAddress: localhost
   maxConnections: 2
   authenticator: {fileID: 0}
   playerPrefab: {fileID: 1240244544407914, guid: b1651eaf8c7564a1c86031dfbb8a7b28, type: 3}
@@ -1468,8 +1515,7 @@ MonoBehaviour:
   - {fileID: 1080679924113744, guid: 5f7a7f34494ed40268eff49dbf9168bf, type: 3}
   leftRacketSpawn: {fileID: 473997961}
   rightRacketSpawn: {fileID: 1397990096}
-  leftScore: 0
-  rightScore: 0
+  scores: {fileID: 450273277}
 --- !u!114 &1886246553
 MonoBehaviour:
   m_ObjectHideFlags: 0

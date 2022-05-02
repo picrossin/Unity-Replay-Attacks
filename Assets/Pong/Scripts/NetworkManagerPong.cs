@@ -16,10 +16,15 @@ namespace Mirror.Examples.Pong
         public Transform leftRacketSpawn;
         public Transform rightRacketSpawn;
 
-        public int leftScore;
-        public int rightScore;
+        [SerializeField] private Scores scores;
         
         GameObject ball;
+
+        public override void OnClientConnect()
+        {
+            base.OnClientConnect();
+            scores.SetupScoring();
+        }
 
         public override void OnServerAddPlayer(NetworkConnectionToClient conn)
         {
@@ -44,6 +49,11 @@ namespace Mirror.Examples.Pong
 
             // call base functionality (actually destroys the player)
             base.OnServerDisconnect(conn);
+        }
+
+        public void SendScoreMessage(bool leftScored)
+        {
+            NetworkServer.SendToAll(new ScoreMessage {leftScored = leftScored});
         }
     }
 }

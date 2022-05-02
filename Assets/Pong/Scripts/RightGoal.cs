@@ -1,14 +1,18 @@
 using Mirror;
+using Mirror.Examples.Pong;
 using TMPro;
 using UnityEngine;
 
 public class RightGoal : NetworkBehaviour
 {
+    [SerializeField] private NetworkManagerPong networkManager;
+    
     [SyncVar] public int LeftScore = 0;
 
     private void OnCollisionEnter2D()
     {
-        CmdServerAddPointRight();
+        // CmdServerAddPointRight();
+        networkManager.SendScoreMessage(true);
     }
 
     [Command(requiresAuthority = false)]
