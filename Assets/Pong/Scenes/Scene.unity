@@ -1483,7 +1483,7 @@ MonoBehaviour:
   offlineScene: 
   onlineScene: 
   transport: {fileID: 1886246553}
-  networkAddress: localhost
+  networkAddress: 192.168.2.16
   maxConnections: 2
   authenticator: {fileID: 0}
   playerPrefab: {fileID: 1240244544407914, guid: b1651eaf8c7564a1c86031dfbb8a7b28, type: 3}
@@ -1493,7 +1493,7 @@ MonoBehaviour:
   - {fileID: 1080679924113744, guid: 5f7a7f34494ed40268eff49dbf9168bf, type: 3}
   leftRacketSpawn: {fileID: 473997961}
   rightRacketSpawn: {fileID: 1397990096}
-  useUDPScores: 0
+  useUDPScores: 1
   scores: {fileID: 450273277}
 --- !u!114 &1886246553
 MonoBehaviour:
