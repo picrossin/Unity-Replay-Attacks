@@ -1,10 +1,11 @@
 # Performing and Preventing Replay Attacks in Unity
-### by Jaden Goter and Camden Obertop
+### pair programmed by Jaden Goter and Camden Obertop
 Replay attacks are where a malicious actor sniffs a packet or set of packets between two hosts and sends it again to achieve some malicious goal, such as giving themselves twice as many coins. These attacks can happen to multiplayer Unity games. We demonstrate how to perform one with Unity, the Mirror netoworking package, and a simple custom XAMPP PHP web server. We also delve into a secure version and speak of common prevention techniques.
 
 ![image](https://user-images.githubusercontent.com/43327093/167699337-8d377b28-b092-4a39-8d35-a6d9e589ec96.png)
 
 ## The Game and Implementation
+
 We modified [Mirror's Pong example](https://mirror-networking.gitbook.io/docs/examples/pong) to include scoring. The out-of-the-box solution simply includes a ball bouncing back and forth and two paddles that you can move. We added a score that is kept track of in [`Scores.cs`](https://github.com/picrossin/Unity-Replay-Attacks/blob/main/Assets/Pong/Scripts/Scores.cs). We implemented two versions of keeping track of scoring: an insecure one that utilizes the XAMPP localhost web server with a [simple PHP API](https://github.com/picrossin/Unity-Replay-Attacks/blob/main/pong_web.php), and a secure one that uses the [`NetworkManagerPong.cs`](https://github.com/picrossin/Unity-Replay-Attacks/blob/main/Assets/Pong/Scripts/NetworkManagerPong.cs) and the [KCP Transport layer script](https://mirror-networking.gitbook.io/docs/transports/kcp-transport) to send a network message whenever a player scored. 
 
 ## Findings
